@@ -6,15 +6,30 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<a href="#" id="sign_link">sign in/sign up</a>
+<a href="#sign_form1" class="open_modal">form 1</a>
+<a href="#sign_form2" class="open_modal">form 2</a>
 
-<div class="modal" id="sign_form">
+<div class="modal" id="sign_form1">
 	<div class="modal_dialog">
      <span class="close"><a href="#"><img src="close.svg"></a></span>
 		<h1>Sign in</h1>
 		<a href="#" class="btn login-google">Login with Google</a>
 		<a href="#" class="btn login-facebook">Login with Facebook</a>
 		<p class="or">or</p>
+  	<input type="email" name="email" class="sign_input" placeholder="Email address">
+  	<input type="password" name="password" class="sign_input" placeholder="Password">
+		<a href="#" class="btn sign_in">Sign in</a>
+		<div class="sign_help">
+			<a href="#">Forgot you password</a>
+			<p>Do not have an account? <a href="#">Create now</a></p>
+		</div>
+	</div>
+</div>		
+
+<div class="modal" id="sign_form2">
+	<div class="modal_dialog">
+     <span class="close"><a href="#"><img src="close.svg"></a></span>
+		<h1>Sign in</h1>
   	<input type="email" name="email" class="sign_input" placeholder="Email address">
   	<input type="password" name="password" class="sign_input" placeholder="Password">
 		<a href="#" class="btn sign_in">Sign in</a>
