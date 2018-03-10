@@ -35,6 +35,7 @@
 <!-- app -->
 <div id="app">
   <button id="show-modal" @click="open">Show Modal</button>
+  <button id="show-modal" @click="showModal2 = true">Show Modal</button
   <!-- use the modal component, pass in the prop -->
   <modal v-if="showModal" @close="showModal = false">
     <h3 slot="header">Sign in</h3>
@@ -58,10 +59,21 @@
     </footer>  
 
   </modal>
+
+  <modal v-if="showModal2" @close="showModal2 = false">
+    <h3 slot="header">Sign out</h3>
+
+    <footer class="modal__footer" slot="footer">
+      <a href="#">Forgot you password</a>
+      <p>Do not have an account? <a href="#">Create now</a></p> 
+    </footer>  
+
+  </modal>
 </div><!-- end app -->
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+<script src="vue.js"></script>
 <script src="modal_vue.js"></script>
 </body>
 </html>
