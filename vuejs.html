@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal form on Vue.js</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<script type="text/x-template" id="modal-template">
+  <transition name="modal">
+    <div class="modal">
+      <div class="modal__wrapper" v-on:click.self="$emit('close')">
+        <div class="modal__container">
+
+          <span class="modal__close"><a href="#" v-on:click="$emit('close')"><img src="close.svg"></a></span>
+
+          <header class="modal__header">
+            <slot name="header">
+              <h1>Form</h1>
+            </slot>
+          </header>
+        
+          <slot name="form"></slot>
+
+          <slot name="footer"></slot>
+
+        </div>
+      </div>
+    </div>
+  </transition>
+</script>
+
+<!-- app -->
+<div id="app">
+  <button id="show-modal" @click="open">Show Modal</button>
+  <!-- use the modal component, pass in the prop -->
+  <modal v-if="showModal" @close="showModal = false">
+    <h3 slot="header">Sign in</h3>
+
+    <form slot="form">
+      <div class="modal__main">
+        <div class="modal__signup-api">
+          <button class="btn btn_red">Login with Google</button>
+          <button class="btn btn_blue">Login with Facebook</button>
+        </div>
+        <p class="modal__or">or</p>
+        <input type="email" name="email" class="form-input" placeholder="Email address">
+        <input type="password" name="password" class="form-input" placeholder="Password">
+        <button class="btn btn_light-blue">Sign in</button>
+      </div>
+    </form>
+
+    <footer class="modal__footer" slot="footer">
+      <a href="#">Forgot you password</a>
+      <p>Do not have an account? <a href="#">Create now</a></p> 
+    </footer>  
+
+  </modal>
+</div><!-- end app -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+<script src="modal_vue.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.btn {
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 100px;
+  transition: .3s all ease;
+  background-color: #388dfe;
+  margin-bottom: 10px;
+}
+.btn:hover {
+  opacity: .8;
+  color: #fff;
+}
+.btn_red {
+  background-color: #e0523b;
+}
+.btn_blue {
+  background-color: #3968b5;
+  margin-bottom: 16px;
+}
+.btn_light-blue {
+  opacity: .5;
+  background-color: #388dfe;
+  margin-top: 6px;
+}
