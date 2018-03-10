@@ -34,10 +34,10 @@
 
 <!-- app -->
 <div id="app">
-  <button id="show-modal" @click="open">Show Modal</button>
-  <button id="show-modal" @click="showModal2 = true">Show Modal</button
+  <button class="btn" @click="open('modal1')">Show Modal</button>
+  <button class="btn btn_red" @click="open('modal2')">Show Modal 2</button>
   <!-- use the modal component, pass in the prop -->
-  <modal v-if="showModal" @close="showModal = false">
+  <modal v-if="showModal === 'modal1'" @close="showModal = ''">
     <h3 slot="header">Sign in</h3>
 
     <form slot="form">
@@ -60,7 +60,7 @@
 
   </modal>
 
-  <modal v-if="showModal2" @close="showModal2 = false">
+  <modal v-if="showModal === 'modal2'" @close="showModal = ''">
     <h3 slot="header">Sign out</h3>
 
     <footer class="modal__footer" slot="footer">

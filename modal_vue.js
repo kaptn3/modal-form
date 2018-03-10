@@ -6,17 +6,19 @@ Vue.component('modal', {
 new Vue({
   el: '#app',
   data: {
-    showModal: false,
-    showModal2: false
+    showModal: ''
   },
   methods: {
-    open: function (number) {
+    open: function (name) {
+      console.log(name);
       document.body.classList.add('fixed-for-mobile');
-      this.showModal = true;
+      this.showModal = name;
     },
     close: function (number) {
       ocument.body.classList.remove('fixed-for-mobile');
-      this.showModal = false;
+      this.showModal = '';
     }
   }
 });
+
+// передавать значения в виде open(showModal)
