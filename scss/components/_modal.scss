@@ -14,6 +14,7 @@
   align-items: center;
   width: 100%;
   height: 100%;
+  overflow-y: auto;
 }
 .modal__container {
   max-width: 450px;
@@ -64,14 +65,14 @@
   width: 15px;
 }
 
+.fixed-for-mobile {
+  overflow: hidden;
+}
+
 @media(max-height: 525px) { /* depends of the height modal */
   .modal__wrapper {
-    overflow-y: scroll;
     align-items: flex-start;
     padding: 30px;
-  }
-  .fixed-for-mobile {
-    position: fixed;
   }
 }
 @media(max-height: 525px) and (max-width: 575.99px) { 
@@ -82,15 +83,11 @@
 }
 @media(max-width: 575.99px) {
   .modal__wrapper {
-    overflow-y: scroll;
     align-items: flex-start;
   }
   .modal__footer {
     flex-direction: column;
     align-items: center;
-  }
-  .fixed-for-mobile {
-    position: fixed;
   }
 }
 @media(max-width: 767.99px) {
